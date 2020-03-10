@@ -9,7 +9,7 @@ public class Email {
     private String department;
     private String email;
     private String companySuffix = "company.com";
-    private int mailboxCapacity;
+    private int mailboxCapacity = 500;
     private int defaultPwdLength = 10;
     private String alternateEmail;
 
@@ -17,19 +17,15 @@ public class Email {
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("EMAIL CREATED: " + this.firstName + " " + this.lastName);
 
         // Call method to ask for department
         this.department = setDepartment();
-        System.out.println("Department: " + this.department);
 
         // Call a method that returns a random password
         this.password = randomPassword(defaultPwdLength);
-        System.out.println("Password generated: " + this.password);
 
         // Combine elements into an email address
         this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + this.department + "." + companySuffix;
-        System.out.println("Your email is: " + this.email);
 
     }
 
@@ -62,8 +58,34 @@ public class Email {
     }
 
     // Set the mailbox capacity
+    public void setMailboxCapacity(int capacity) {
+        this.mailboxCapacity = capacity;
+    }
 
     // Set the alternate email
+    public void setAlternateEmail(String alternateEmail) {
+        this.alternateEmail = alternateEmail;
+    }
 
     // Change the password
+    public void changePassword(String password) {
+        this.password = password;
+    }
+
+    // Get methods
+    public int getMailboxCapacity() { return mailboxCapacity; }
+    public String getAlternateEmail() { return alternateEmail; }
+    public String getPassword() { return password; }
+
+    // Get all info
+    public String showInfo() {
+        System.out.println();
+        return "\nNew Account Created for: " + this.firstName + " " + this.lastName +
+                "\nThe new email is: " + email +
+                            "\nThe alternate email is: " + alternateEmail
+                            + "\nThe generated password is: " + password
+                            + "\nThe department code is: " + department
+                            + "\nThe mailbox capacity is: " + mailboxCapacity
+                            + "\nTell our new employee to have an awesome day!!";
+    }
 }
