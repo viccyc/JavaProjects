@@ -1,5 +1,7 @@
 package studentdatabaseapp;
 
+import java.util.Scanner;
+
 public class Student {
     private String firstName;
     private String lastName;
@@ -10,10 +12,18 @@ public class Student {
     private int tuitionBalance;
 
     // constructor to prompt for student name and year
-    public Student(String firstName, String lastName, int gradeYear) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.gradeYear = gradeYear;
+    public Student() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter student first name: ");
+        this.firstName = input.nextLine();
+
+        System.out.println("Enter student last name: ");
+        this.lastName = input.nextLine();
+
+        System.out.println("1 - Freshman\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter studnet year level: ");
+        this.gradeYear = input.nextInt();
+
+        System.out.println(firstName + " " + lastName + " " + gradeYear);
     }
 
     // create student 5-digit unique ID, first digit is grade level
