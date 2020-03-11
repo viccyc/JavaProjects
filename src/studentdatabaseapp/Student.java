@@ -7,9 +7,9 @@ public class Student {
     private String lastName;
     private int gradeYear;
     private String studentId;
-    private String course;
+    private String courses = "none";
     private static int courseCost = 600;
-    private int tuitionBalance;
+    private int tuitionBalance = 0;
     private static int id = 1000;
 
     // constructor to prompt for student name and year
@@ -21,7 +21,7 @@ public class Student {
         System.out.println("Enter student last name: ");
         this.lastName = input.nextLine();
 
-        System.out.println("1 - Freshman\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter studnet year level: ");
+        System.out.println("1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter student year level: ");
         this.gradeYear = input.nextInt();
 
         setStudentID();
@@ -35,6 +35,23 @@ public class Student {
     }
 
     // enroll in course
+    public void enrollInCourses() {
+        do {
+            System.out.print("Enter course to enroll in (Q to quit): ");
+            Scanner courseInput = new Scanner(System.in);
+            String chosenCourse = courseInput.nextLine();
+            if (!chosenCourse.equals("Q")) {
+                if (courses.equals("none")) {
+                    courses = "\n" + chosenCourse;
+                } else {
+                    courses += "\n" + chosenCourse;
+                }
+                tuitionBalance += courseCost;
+            } else { break; }
+        } while (1 != 0);
+        System.out.println("COURSES ENROLLED IN: " + courses);
+        System.out.println("TUITION BALANCE: " + tuitionBalance);
+    }
 
     // get the balance of the student
 
