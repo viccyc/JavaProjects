@@ -21,7 +21,7 @@ public class Student {
         System.out.println("Enter student last name: ");
         this.lastName = input.nextLine();
 
-        System.out.println("1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter student year level: ");
+        System.out.println("1 - Grade 10\n2 - Grade 11\n3 - Grade 12\nEnter student year level: ");
         this.gradeYear = input.nextInt();
 
         setStudentID();
@@ -50,10 +50,22 @@ public class Student {
             } else { break; }
         } while (1 != 0);
         System.out.println("COURSES ENROLLED IN: " + courses);
-        System.out.println("TUITION BALANCE: " + tuitionBalance);
     }
 
     // get the balance of the student
+    public void getBalance() {
+        System.out.println("Your balance is: $" + tuitionBalance);
+    }
+
+    public void payTuition() {
+        getBalance();
+        System.out.print("Enter amount you would like to pay in $:");
+        Scanner payment = new Scanner(System.in);
+        int paymentReceived = payment.nextInt();
+        tuitionBalance -= paymentReceived;
+        System.out.println("Thank you for your payment of $" + paymentReceived);
+        getBalance();
+    }
 
     // pay tuition
 
