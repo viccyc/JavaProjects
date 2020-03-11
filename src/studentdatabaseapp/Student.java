@@ -21,11 +21,10 @@ public class Student {
         System.out.println("Enter student last name: ");
         this.lastName = input.nextLine();
 
-        System.out.println("1 - Grade 10\n2 - Grade 11\n3 - Grade 12\nEnter student year level: ");
+        System.out.println("10 - Grade 10\n11 - Grade 11\n12 - Grade 12\nEnter student year level: ");
         this.gradeYear = input.nextInt();
 
         setStudentID();
-        System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentId);
     }
 
     // create student 5-digit unique ID, first digit is grade level
@@ -42,14 +41,13 @@ public class Student {
             String chosenCourse = courseInput.nextLine();
             if (!chosenCourse.equals("Q")) {
                 if (courses.equals("none")) {
-                    courses = "\n" + chosenCourse;
+                    courses = "\n  " + chosenCourse;
                 } else {
-                    courses += "\n" + chosenCourse;
+                    courses += "\n  " + chosenCourse;
                 }
                 tuitionBalance += courseCost;
             } else { break; }
         } while (1 != 0);
-        System.out.println("COURSES ENROLLED IN: " + courses);
     }
 
     // get the balance of the student
@@ -57,6 +55,7 @@ public class Student {
         System.out.println("Your balance is: $" + tuitionBalance);
     }
 
+    // pay tuition
     public void payTuition() {
         getBalance();
         System.out.print("Enter amount you would like to pay in $:");
@@ -67,7 +66,12 @@ public class Student {
         getBalance();
     }
 
-    // pay tuition
-
-    // show status of student
+    // show status and info of student
+    public String showStudentInfo() {
+        return "Student: " + firstName + " " + lastName
+                + "\n Student ID: " + studentId
+                + "\n Grade: " + gradeYear
+                + "\n Courses enrolled in: " + courses
+                + "\n Remaining tuition: $" + tuitionBalance;
+    }
 }
