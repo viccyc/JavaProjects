@@ -60,6 +60,7 @@ public class Student {
         getBalance();
         System.out.print("Enter amount you would like to pay in $:");
         Scanner payment = new Scanner(System.in);
+
         int paymentReceived = payment.nextInt();
         tuitionBalance -= paymentReceived;
         System.out.println("Thank you for your payment of $" + paymentReceived);
