@@ -6,9 +6,9 @@ public class Savings extends Account {
     int safetyAccessCode;
 
     // Constructor to initialize savings account properties
-    public Savings(String name) {
-        super(name);
-        System.out.println("New savings account");
+    public Savings(String name, int sIN, double initDeposit) {
+        super(name, sIN, initDeposit);
+        System.out.println("savings account");
     }
-    // List an methods specific to the savings account
+    // List methods specific to the savings account
 }

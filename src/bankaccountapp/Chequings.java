@@ -6,9 +6,9 @@ public class Chequings extends Account {
     int debitCardPIN;
 
     // Constructor to initialize chequings account properties
-    public Chequings(String name) {
-        super(name);
-        System.out.println("New chequings account");
+    public Chequings(String name, int sIN, double initDeposit) {
+        super(name, sIN, initDeposit);
+        System.out.println("chequings account");
     }
 
     // List an methods specific to the chequings account
