@@ -2,7 +2,11 @@ package bankaccountapp;
 
 public abstract class Account implements IBaseRate {
     // List common properties for savings and chequings account
-//    int baseRate;
+    String name;
+    String sIN;
+    double balance;
+    double baseRate;
+    String accountNumber;
     // Constructor to set base properties and initialize account
 //    public Account (int baseRate) {
 //        this.baseRate = baseRate;
