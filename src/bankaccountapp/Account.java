@@ -20,11 +20,6 @@ public abstract class Account implements IBaseRate {
         this.sIN = sIN;
         this.balance = initDeposit;
 
-        System.out.println("Name: " + this.name);
-        System.out.println("SIN Number: " + this.sIN);
-        System.out.println("Initial deposit: " + this.balance);
-        System.out.print("New Account: ");
-
         uniqueNumber++;
         // Set account number
         this.accountNumber = setAccountNumber();
@@ -39,5 +34,13 @@ public abstract class Account implements IBaseRate {
     }
 
     // List common methods
+    public void showAccountInfo() {
+        System.out.println(
+                    "Name: " + name +
+                    "\nSIN Number: " + sIN +
+                    "\nAccount Number: " + accountNumber +
+                    "\nBalance: " + balance
+        );
+    }
 }
 
