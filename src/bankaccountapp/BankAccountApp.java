@@ -8,6 +8,10 @@ public class BankAccountApp {
         chAccount.showAccountInfo();
         savAccount.showAccountInfo();
 
+        chAccount.deposit(1215);
+        savAccount.withdraw(27);
+        savAccount.transfer("Mortgage", 50);
+
         // Read a CSV file then create new accounts based on that data
     }
 }

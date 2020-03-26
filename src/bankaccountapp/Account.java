@@ -38,6 +38,25 @@ public abstract class Account implements IBaseRate {
     }
 
     // List common methods
+    public void deposit(double deposit) {
+        balance += deposit;
+        System.out.println("Depositing $" + deposit);
+        printBalance();
+    }
+    public void withdraw(double withdrawal) {
+        balance -= withdrawal;
+        System.out.println("Withdrawing $" + withdrawal);
+        printBalance();
+    }
+    public void transfer(String toAccount, double transfer) {
+        balance -= transfer;
+        System.out.println("Transfering $" + transfer + " to " + toAccount);
+        printBalance();
+    }
+    public void printBalance() {
+        System.out.println("Your balance is now $" + balance);
+    }
+
     public void showAccountInfo() {
         System.out.println(
                     "Name: " + name +
