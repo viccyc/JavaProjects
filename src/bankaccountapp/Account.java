@@ -23,7 +23,11 @@ public abstract class Account implements IBaseRate {
         uniqueNumber++;
         // Set account number
         this.accountNumber = setAccountNumber();
+        setRate();
     }
+
+    // abstract so that the sub account classes must implement this method in the class
+    public abstract void setRate();
 
     private String setAccountNumber() {
         // last 2 digits of SIN, unique 5-digit number and random 3-digit number
@@ -39,7 +43,8 @@ public abstract class Account implements IBaseRate {
                     "Name: " + name +
                     "\nSIN Number: " + sIN +
                     "\nAccount Number: " + accountNumber +
-                    "\nBalance: " + balance
+                    "\nBalance: " + balance +
+                    "\nBase rate: " + baseRate + "%"
         );
     }
 }

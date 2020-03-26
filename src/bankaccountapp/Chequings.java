@@ -12,6 +12,11 @@ public class Chequings extends Account {
         assignDebitCard();
     }
 
+    @Override
+    public void setRate() {
+        baseRate = getBaseRate() * .15;
+    }
+
     private void assignDebitCard() {
         debitCardNumber = (long)(Math.random() * Math.pow(10, 16));
         debitCardPIN = random.nextInt(9000) + 1000;

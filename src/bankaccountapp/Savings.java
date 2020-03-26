@@ -12,6 +12,11 @@ public class Savings extends Account {
         setSafetyDepositBox();
     }
 
+    @Override
+    public void setRate() {
+        baseRate = getBaseRate() - .25;
+    }
+
     private void setSafetyDepositBox() {
         safetyDepositBoxID = random.nextInt(900) + 100;
         safetyAccessCode = random.nextInt(9000) + 1000;
